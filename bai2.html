@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [3,6,8];
+        let x = +prompt("Nhập số nguyên x");
+        let index = +prompt("Nhập vị trí index");
+        function insertNumberToArray(arr, x, index) {
+            if (index < 0 || index > arr.length) {
+                return arr;
+        }
+        let newArr = new Array(arr.length + 1);
+        for (let i = 0; i < newArr.length; i++) {
+            if (i < index) {
+                newArr[i] = arr[i];
+            } else if (i === index){
+                newArr[i] = x;
+            } else {
+                newArr[i] = arr[i - 1];
+            }
+        }
+        return newArr;
+        }
+        document.write(insertNumberToArray(arr, x, index));
+    </script>
+</body>
+</html>
